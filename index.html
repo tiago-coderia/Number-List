@@ -1,35 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Lista de Números</title>
+    <title>Calculadora de Números</title>
+
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1><i>Lista de Números</i></h1>
-    </header>
+    <h1>Calculadora de Números</h1>
+    <p>Insira um valor de 1 a 100:</p>
+    <input type="number" id="numeroInput" min="1" max="100">
+    <button onclick="adicionarNumero()">Adicionar</button>
+    <button onclick="finalizar()">Finalizar</button>
 
-    <section>
-        <div id="msg">
-            <p> Adicione um Número (Entre 1 e 100): <input type="number" name="txtn" id="txtn" placeholder="Digite um numero...">
-                <input id="add" type="button" value="Adicionar">
-            </p>
-            <p>
-                <select name="lista" id="lista" size="10"></select>
-                <br><input id="fim" type="button" value="Finalizar">
-            </p>
-        </div>
+    <ul id="listaValores">
+        <!-- A lista de valores adicionados aparecerá aqui -->
+    </ul>
 
-        <div id="res">
-        </div>
-    </section>
-
-    <footer>
-        <p><i>&copy; Matheus Amorim</i></p>
-    </footer>
-
+    <ul id="resultado">
+        <li>Quantos números ao total foram adicionados: <span id="totalNumeros">0</span></li>
+        <li>Soma de todos os valores: <span id="somaValores">0</span></li>
+        <li>Maior número da lista: <span id="maiorNumero">-</span></li>
+        <li>Menor número da lista: <span id="menorNumero">-</span></li>
+        <li>Média de todos os valores somados: <span id="mediaValores">0</span></li>
+    </ul>
+    
+   
 </body>
-<script src="script.js"></script>
 </html>

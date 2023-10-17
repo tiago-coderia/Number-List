@@ -1,75 +1,28 @@
-let add = document.querySelector(`input#add`)
-add.addEventListener(`click`, adicionar)
+let numeros = [];
 
-let fim = document.querySelector(`input#fim`)
-fim.addEventListener(`click`, finalizar)
+function adicionarNumero() {
+    const numeroInput = document.getElementById('numeroInput');
+    const numero = parseInt(numeroInput.value);
 
-let txtn = document.querySelector(`input#txtn`)
-let lista = document.querySelector(`select#lista`)
-let res = document.querySelector(`div#res`)
-let valores = []
+    if (!isNaN(numero) && numero >= 1 && numero <= 100) {
+        numeros.push(numero);
 
-function isNumero(n){
-    if(Number(n) >= 1 && Number(n) <= 100){
-        return true
-    } else{
-        return false
-    }
-}
+        // Adicionar o valor à lista de valores
+        const listaValores = document.getElementById('listaValores');
+        const listItem = document.createElement('li');
+        listItem.textContent = numero;
+        listaValores.appendChild(listItem);
 
-
-function inLista(n, l){
-    if(l.indexOf(Number(n)) != -1){
-        return true
+        numeroInput.value = '';
     } else {
-        return false
+        alert('Por favor, insira um número entre 1 e 100.');
     }
-
 }
 
-function adicionar(){
-    if(isNumero(txtn.value) && !inLista(txtn.value, valores)){
-        valores.push(Number(txtn.value))
-        let item = document.createElement(`option`)
-        item.text = `Valor ${txtn.value} foi adicionado!`
-        lista.appendChild(item)
-        res.innerHTML = ``
-    } else{
-        alert(`Valor inválido ou já adicionado a lista!`)
-    }
-
-    txtn.value = ``
-    txtn.focus()
-}
-
-function finalizar(){
-    if(valores.length == 0){
-        alert(`Adicione um número antes de finalizar!`)
-    } else{
-        let tot = valores.length
-        let maior = valores[0]
-        let menor = valores[0]
-        let soma = 0 
-        let media = 0
-        for(let pos in valores){
-            soma += valores[pos]
-            if(valores[pos] > maior){
-                maior = valores[pos]
-            }
-            if(valores[pos] < menor){
-                menor = valores[pos]
-            }
-        }
-        media = soma / tot
-
-        res.innerHTML = ``
-        res.innerHTML += `<p>Foram adicionados: ${tot} números</p>`
-        res.innerHTML += `<br><p>A soma de todos os numeros é: ${soma}</p>`
-        res.innerHTML += `<br><p>O maior número adicionado foi: ${maior}</p>`
-        res.innerHTML += `<br><p>O menor número adicionado foi: ${menor}</p>`
-        res.innerHTML += `<br><p>Por fim, a média é de: ${media}</p>`
-    }
-    
-
-    
+function finalizar() {
+    document.getElementById('totalNumeros').textContent = numeros.length;
+    document.getElementById('somaValores').textContent = numeros.reduce((acc, curr) => acc + curr, 0);
+    document.getElementById('maiorNumero').textContent = Math.max(...numeros);
+    document.getElementById('menorNumero').textContent = Math.min(...numeros);
+    document.getElementById('mediaValores').textContent = (numeros.reduce((acc, curr) => acc + curr, 0) / numeros.length).toFixed(2);
 }
