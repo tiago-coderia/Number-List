@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Calculadora de Números</title>
-
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
-    <h1>Calculadora de Números</h1>
-    <p>Insira um valor de 1 a 100:</p>
-    <input type="number" id="numeroInput" min="1" max="100">
-    <button onclick="adicionarNumero()">Adicionar</button>
-    <button onclick="finalizar()">Finalizar</button>
+    <div class="container">
+        <h1>Calculadora de Números</h1>
+        <p>Insira um valor de 1 a 100:</p>
+        <input type="number" id="numeroInput" min="1" max="100">
+        <button onclick="adicionarNumero()">Adicionar</button>
+        <button onclick="finalizar()">Finalizar</button>
+        <ul id="listaValores">
+            <!-- A lista de valores adicionados aparecerá aqui -->
+        </ul>
+        <ul id="resultado">
+            <li>Quantos números ao total foram adicionados: <span id="totalNumeros">0</span></li>
+            <li>Soma de todos os valores: <span id="somaValores">0</span></li>
+            <li>Maior número da lista: <span id="maiorNumero">-</span></li>
+            <li>Menor número da lista: <span id="menorNumero">-</span></li>
+            <li>Média de todos os valores somados: <span id="mediaValores">0</span></li>
+        </ul>
+    </div>
 
-    <ul id="listaValores">
-        <!-- A lista de valores adicionados aparecerá aqui -->
-    </ul>
 
-    <ul id="resultado">
-        <li>Quantos números ao total foram adicionados: <span id="totalNumeros">0</span></li>
-        <li>Soma de todos os valores: <span id="somaValores">0</span></li>
-        <li>Maior número da lista: <span id="maiorNumero">-</span></li>
-        <li>Menor número da lista: <span id="menorNumero">-</span></li>
-        <li>Média de todos os valores somados: <span id="mediaValores">0</span></li>
-    </ul>
-    
-   
 </body>
+
 </html>

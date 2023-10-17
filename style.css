@@ -1,92 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    outline: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Poppins', sans-serif;
+
 }
 
-body{
-    background-image: url(./fundomad.jpg);
-    font: normal 15pt arial;
+body {
+    background: url('fundomar.jpg') no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.4rem;
+    font-family: 'Poppins', sans-serif;
+    color: white
 }
 
+ul,
+li,
+a {
+    text-decoration: none;
+    list-style: none;
+}
 
-header{
-    width: 400px;
-    background: rgba(66, 154, 189, 0.534);
-    margin: 50px auto;
-    color: rgb(245, 244, 244);
-    text-align: center;
-    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.322);
+button {
+    background: white;
+    color: black;
+    padding: 10px 20px;
+    min-width: 200px;
+    border: 0;
     border-radius: 5px;
+    width: 100%;
+    transition: 0.5s ease all;
+
+    &:hover {
+        background: black;
+        color: white;
+        cursor: pointer;
+    }
 }
 
-section{
-    background: rgba(255, 255, 255, 0.349);
-    color: rgb(0, 0, 0);
-    width: 700px;
+input {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
     padding: 10px;
-    margin: 56px auto;
-    border-radius: 15px;
-    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.199);
+    background: transparent;
+    border: 1px solid white;
+    color: white;
 }
 
-footer{
-    color: rgb(255, 255, 255);
-    text-align: center;
-    background: rgba(66, 154, 189, 0.534);
-    width: 200px;
-    margin: auto;
-    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.212);
-}
-
-#lista{
-    width: 160px;
-    margin-top: 10px;
-    background: rgba(255, 255, 255, 0.349);
-    padding: 5px;
-}
-
-#msg{
-    margin: 5px 5px;
-}
-
-#res{
-    margin-left: 5px;
-    margin-top: 10px;
-}
-
-#txtn{
-    outline: none;
-    padding: 5px;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.349);
-    border: none
-}
-
-#add{
-    border-radius: 5px;
-    width: 100px;
-    height: 25px;
-    background-color: rgba(255, 255, 255, 0.349);
-    border: none;
-}
-
-#add:hover{
-    opacity: 0.7;
-    cursor: pointer;
-}
-
-#fim{
-    border-radius: 5px;
-    width: 100px;
-    height: 25px;
-    background-color: rgba(255, 255, 255, 0.349);
-    border: none;
-}
-
-#fim:hover{
-    opacity: 0.7;
-    cursor: pointer;
+.container {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
